@@ -1,5 +1,5 @@
 # Social Reading App
-# Date: 1/22/2023
+# Date: 2/09/2023
 ## By: Freddy Caione
 ### [Linkedin](https://www.linkedin.com/in/frederick-caione-b699821b9/) | [Github](https://github.com/fcaione)
 
