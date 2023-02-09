@@ -7,7 +7,7 @@ const AcademicSourceSchema = require("./academicSource")
 const Book = mongoose.model("Book", BookSchema)
 const Post = mongoose.model("Post", PostSchema)
 const User = mongoose.model("User", UserSchema)
-const AcademicSource = mongoose.model("User", AcademicSourceSchema)
+const AcademicSource = mongoose.model("Sources", AcademicSourceSchema)
 
 module.exports = {
     Book,
