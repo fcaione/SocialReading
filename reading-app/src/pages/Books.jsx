@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import BookCard from "../components/BookCard"
+import AddBook from "../components/AddBook"
 
 const Books = () => {
 
@@ -9,7 +10,6 @@ const Books = () => {
     const getBooks = async () => {
         const response = await axios.get("http://localhost:3001/api/books/")
         setBooks(response.data)
-        console.log(response.data)
     }
  
     useEffect(() => {
@@ -26,6 +26,7 @@ const Books = () => {
   return (
     <div className="books-container">
         {listOfBooks}
+        <AddBook />
     </div>
   )
 }

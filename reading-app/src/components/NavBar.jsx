@@ -2,12 +2,12 @@ import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
 	return (
-		<nav>
+		<nav class="navbar">
 			<NavLink to="/">
-                HOME
+                <h3>HOME</h3>
             </NavLink>
             <NavLink to="/books">
-                Books
+                <h3>BOOKS</h3>
             </NavLink>
 		</nav>
 	);

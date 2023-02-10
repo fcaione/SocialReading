@@ -27,10 +27,19 @@ const getPostsForBook = async (req, res) => {
     }
 }
 
-
+const createBook = async (req, res) => {
+    try {
+        const book = await new Book(req.body)
+        await book.save()
+        return res.status(201).json({book})
+    } catch (e) {
+        return res.status(500).json({ error: e.message})
+    }
+}
 
 module.exports = {
     getAllBooks,
     getBook,
-    getPostsForBook
+    getPostsForBook,
+    createBook
 }
