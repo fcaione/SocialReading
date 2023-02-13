@@ -34,7 +34,7 @@ const BooksForm = () => {
         <form onSubmit={handleSubmit} className="form-books">
             <label htmlFor="title">title</label>
             <input 
-            type="title" 
+            type="text" 
             name="title" 
             id="title" 
             onChange={handleChange} 
@@ -42,7 +42,7 @@ const BooksForm = () => {
             />
             <label htmlFor="author">author</label>
             <input 
-            type="author" 
+            type="text" 
             name="author" 
             id="author" 
             onChange={handleChange} 
@@ -50,7 +50,7 @@ const BooksForm = () => {
             />
             <label htmlFor="img">img</label>
             <input 
-            type="img" 
+            type="text" 
             name="img" 
             id="img" 
             onChange={handleChange} 
@@ -58,7 +58,7 @@ const BooksForm = () => {
             />
             <label htmlFor="publisher">publisher</label>
             <input 
-            type="publisher" 
+            type="text" 
             name="publisher" 
             id="publisher" 
             onChange={handleChange} 
@@ -66,7 +66,7 @@ const BooksForm = () => {
             />
             <label htmlFor="date Published">date Published</label>
             <input 
-            type="datePublished" 
+            type="text" 
             name="datePublished" 
             id="datePublished" 
             onChange={handleChange} 

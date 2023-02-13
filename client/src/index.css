@@ -55,7 +55,7 @@ code {
   border: 1px solid black;
 }
 
-.form-books {
+.form-books, .form-create-user{
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -1,4 +1,4 @@
-const { Book, Post } = require("../models")
+const { Book, Post, User } = require("../models")
 
 const getAllBooks = async (req, res) => {
     try {
@@ -47,10 +47,31 @@ const createPost = async (req, res) => {
     }
 }
 
+const createUser = async (req, res) => {
+    try {
+        const user = await new User(req.body)
+        await user.save()
+        return res.status(201).json({user})
+    } catch (e) {
+        return res.status(500).json({ error: e.message})
+    }
+}
+
+const certifyUser = async (req, res) => {
+    try {
+        const user = await User.findOne({email: req.query.product.email, password: req.query.product.password})
+        return res.status(201).json(user)
+    } catch (e) {
+        return res.status(500).json({ error: e.message})
+    }
+}
+
 module.exports = {
     getAllBooks,
     getBook,
     getPostsForBook,
     createBook,
-    createPost
+    createPost,
+    createUser,
+    certifyUser
 }
