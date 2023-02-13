@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import NavBar from './components/NavBar';
 import Books from './pages/Books';
 import BookDetails from './components/BookDetails';
+import PostsForm from './components/PostsForm';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element = { <Home />} />
         <Route path="/books" element = { <Books />} />
         <Route path="/books/:id" element = { <BookDetails />} />
+        <Route path="/books/:id/new" element = { <PostsForm />} />
       </Routes>
     </div>
   );

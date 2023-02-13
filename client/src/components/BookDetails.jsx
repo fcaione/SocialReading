@@ -28,6 +28,14 @@ const BookDetails = () => {
 				<h3>{selectedBook.publisher}</h3>
 				<h3>{selectedBook.datePublished}</h3>
 			</div>
+
+			<div className="reviews">
+				<h1>Write a review!</h1>
+				<Link to={`new`}>
+					<button>Post</button>
+				</Link>
+			</div>
+
 			<div className="posts-container">
 				<Posts />
 			</div>

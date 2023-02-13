@@ -50,3 +50,7 @@ code {
 .add-img {
   width: 200px;
 }
+
+.post {
+  border: 1px solid black;
+}

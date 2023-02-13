@@ -26,16 +26,9 @@ const Posts = () => {
 	))
 
 	return (
-		<div>
-			<div className="reviews">
-				<h1>Write a review!</h1>
-				<Link to={`new`}>
-					<button>Post</button>
-				</Link>
-			</div>
-
+		<>
 			{posts && <div className="posts-container">{postsComponent}</div>}
-		</div>
+        </>
 	)
 }
 export default Posts
