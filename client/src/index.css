@@ -54,3 +54,10 @@ code {
 .post {
   border: 1px solid black;
 }
+
+.form-books {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

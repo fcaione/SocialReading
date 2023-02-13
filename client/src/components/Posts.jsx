@@ -19,7 +19,7 @@ const Posts = () => {
 	}
 
 	const postsComponent = posts.map((post) => (
-		<div className="post">
+		<div className="post" key={post._id}>
 			<h3>{post.title}</h3>
 			<p>{post.content}</p>
 		</div>
