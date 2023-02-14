@@ -17,7 +17,7 @@ const BookDetails = () => {
 
 	useEffect(() => {
 		getBook()
-	}, [id])
+	}, [])
 
 	return (
 		<>

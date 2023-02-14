@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom"
 
 const Login = () => {
 
+	let navigate = useNavigate()
+
   const initialState = {
 		email: "",
 		password: ""
@@ -18,6 +20,7 @@ const Login = () => {
   const login = (user) => {
     console.log(user)
     localStorage.setItem("userId", user._id)
+	navigate("/")
   }
 
 	const handleSubmit = async (e) => {
@@ -29,7 +32,7 @@ const Login = () => {
     })
     const user = response.data
     console.log(user)
-		setFormState(initialState)
+	setFormState(initialState)
     if (user) login(user)
 	}
 

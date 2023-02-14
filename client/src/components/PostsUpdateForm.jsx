@@ -1,23 +1,32 @@
-import { useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import axios from "axios"
+import { useState, useEffect } from "react"
 
-const PostsForm = (props) => {
-
+const PostsUpdateForm = () => {
     let { id } = useParams()
-    const userId = localStorage.getItem("userId")
+
     const navigate = useNavigate()
 
+    const [post, setPost] = useState({})
+    const [formState, setFormState] = useState({})
 
-
-    const initialState = {
-        title: "",
-        content: "",
-        book: id,
-        user: userId
+    const getPost = async () => {
+        const response = await axios.get(`http://localhost:3001/api/post/${id}`)
+        setPost(response.data)
     }
 
-    const [formState, setFormState] = useState(initialState)
+    useEffect(() => {
+        getPost()
+    }, [])
+
+    useEffect(() => {
+        setFormState({
+            title: post.title,
+            content: post.content,
+            book: post.book,
+            user: post._id
+        })
+    }, [post])
 
     const handleChange = (e) => {
         setFormState({ ...formState, [e.target.id]: e.target.value })
@@ -25,9 +34,8 @@ const PostsForm = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await axios.post(`http://localhost:3001/api/books/${id}/new`, formState)
-        setFormState(initialState)
-        navigate(`/books/${id}`)
+        await axios.put(`http://localhost:3001/api/post/${id}`, formState)
+        navigate(`/books/${post.book}`)
     }
 
   return (
@@ -50,10 +58,9 @@ const PostsForm = (props) => {
             onChange={handleChange} 
             value={formState.content}
             ></textarea>
-            <button type="submit">Add post</button>
+            <button type="submit">Update Post</button>
         </form>
     </div>
   )
 }
-
-export default PostsForm
+export default PostsUpdateForm
