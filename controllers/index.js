@@ -18,6 +18,15 @@ const getBook = async (req, res) => {
     }
 }
 
+const getPost = async (req, res) => {
+    try {
+        const book = await Post.findById(req.params.id)
+        return res.status(200).send(book)
+    } catch (e) {
+        return res.status(500).send({error: e.message})
+    }
+}
+
 const getPostsForBook = async (req, res) => {
     try {
         const posts = await Post.find({ book: req.params.id})
@@ -47,9 +56,18 @@ const createPost = async (req, res) => {
     }
 }
 
+const updatePost = async (req, res) => {
+    try {
+        console.log(req.body)
+        const post =  await Post.findByIdAndUpdate(req.params.id, {title: req.body.title, content: req.body.content})
+        return res.status(201).json(post)
+    } catch (e) {
+        return res.status(500).json({ error: e.message})
+    }
+}
+
 const deletePost = async (req, res) => {
     try {
-        console.log(req.params.id)
         Post.findByIdAndDelete(req.params.id, () => {
             return res.status(201).send("Post Deleted!")
         })
@@ -85,5 +103,7 @@ module.exports = {
     createPost,
     createUser,
     certifyUser,
-    deletePost
+    deletePost,
+    getPost,
+    updatePost
 }

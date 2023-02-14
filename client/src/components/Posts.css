@@ -1,0 +1,38 @@
+.post-container {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    flex-direction: column;
+    border-bottom: solid 1px gold;
+}
+
+.trash-icon {
+    width: 22px;
+}
+
+.post--buttons {
+    display: flex;
+    grid-column: 2 / 3;
+    justify-content: right;
+    margin-right: 20px;
+}
+
+.post--user {
+    grid-column: 1 / 2;
+}
+
+.post--content {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+p {
+    margin-left: 10px;
+}
+
+.button--icon {
+    all: unset; 
+    margin-right: 5px;
+    cursor: pointer;
+}

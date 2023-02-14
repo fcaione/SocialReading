@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom"
 import trashIcon from "../images/trash-bin.png"
 import update from "../images/update.png"
 import swal from "sweetalert"
+import "./Posts.css"
 
 const Posts = () => {
 	const [posts, setPosts] = useState([])
@@ -42,27 +43,41 @@ const Posts = () => {
 	}
 
 	const postsComponent = posts.map((post) => (
-		<div className="post" key={post._id}>
-			<div className="flex-row">
-				<h3>{post.title}</h3>
+			<div className="post-container" key={post._id}>
+				<div className="post--user">
+					<p>by: user</p>
+				</div>
+
+				<div className="post--content">
+					<h3>{post.title}</h3>
+					<p>{post.content}</p>
+				</div>
+				
 				{localStorage.getItem("userId") === post.user && (
-					<>
-						<button type="button" onClick={() => handleUpdate(post._id)}>
+					<div className="post--buttons">
+						<button 
+						type="button" 
+						onClick={() => handleUpdate(post._id)}
+						className="button--icon"
+						>
 						<img src={update} alt="trash-icon" className="trash-icon"/>
 						</button>
 
-						<button type="button" onClick={() => handleDelete(post._id)}>
+						<button 
+						type="button" 
+						onClick={() => handleDelete(post._id)}
+						className="button--icon"
+						>
 						<img src={trashIcon} alt="trash-icon" className="trash-icon"/>
 						</button>
-					</>	
+					</div>	
 				)}
 			</div>
-			<p>{post.content}</p>
-		</div>
 	))
+
 	return (
 		<>
-			{posts && <div className="posts-container">{postsComponent}</div>}
+			{postsComponent}
         </>
 	)
 }

@@ -35,9 +35,8 @@ const BookDetails = () => {
 
 			<div className="details--posts">
 				<Posts />
-				<h1>Write a review!</h1>
 				<Link to={`new`}>
-					<button>Post</button>
+					<button className="details--btn">Write a Review</button>
 				</Link>
 			</div>
 		</div>
