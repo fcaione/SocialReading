@@ -47,6 +47,17 @@ const createPost = async (req, res) => {
     }
 }
 
+const deletePost = async (req, res) => {
+    try {
+        console.log(req.params.id)
+        Post.findByIdAndDelete(req.params.id, () => {
+            return res.status(201).send("Post Deleted!")
+        })
+    } catch (e) {
+        return res.status(500).json({ error: e.message})
+    }
+}
+
 const createUser = async (req, res) => {
     try {
         const user = await new User(req.body)
@@ -73,5 +84,6 @@ module.exports = {
     createBook,
     createPost,
     createUser,
-    certifyUser
+    certifyUser,
+    deletePost
 }

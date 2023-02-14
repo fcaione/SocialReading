@@ -31,7 +31,6 @@ const Login = () => {
     console.log(user)
 		setFormState(initialState)
     if (user) login(user)
-
 	}
 
   return (

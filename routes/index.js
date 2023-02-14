@@ -9,5 +9,6 @@ router.post("/books/add", controller.createBook)
 router.post("/books/:id/new", controller.createPost)
 router.post("/users", controller.createUser)
 router.get("/users", controller.certifyUser)
+router.delete("/delete/post/:id", controller.deletePost)
 
 module.exports = router;

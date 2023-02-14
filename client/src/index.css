@@ -61,3 +61,13 @@ code {
   justify-content: center;
   align-items: center;
 }
+
+.trash-icon {
+  width: 22px;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
