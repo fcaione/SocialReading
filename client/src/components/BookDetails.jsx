@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
 import Posts from "./Posts"
+import "./BookDetails.css"
 
 const BookDetails = () => {
 	let { id } = useParams()
@@ -20,26 +21,26 @@ const BookDetails = () => {
 	}, [])
 
 	return (
-		<>
-			<div>
-				<img src={selectedBook.img} alt="" />
-				<h3>{selectedBook.title}</h3>
-				<h3>{selectedBook.author}</h3>
-				<h3>{selectedBook.publisher}</h3>
-				<h3>{selectedBook.datePublished}</h3>
+		<div className="book-details-container">
+			<div className="details--sidebar">
+				<img src={selectedBook.img} alt="" className="details--photo"/>
+			</div>
+			<div className="details--data">
+				<h1>{selectedBook.title}</h1>
+				<h3>by: {selectedBook.author}</h3>
+				<h3>Publisher: {selectedBook.publisher}</h3>
+				<h3>Date Published: {selectedBook.datePublished}</h3>
 			</div>
 
-			<div className="reviews">
+
+			<div className="details--posts">
+				<Posts />
 				<h1>Write a review!</h1>
 				<Link to={`new`}>
 					<button>Post</button>
 				</Link>
 			</div>
-
-			<div className="posts-container">
-				<Posts />
-			</div>
-		</>
+		</div>
 	)
 }
 export default BookDetails

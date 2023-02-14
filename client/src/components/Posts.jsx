@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
-import { useParams, Link, useNavigate } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import trashIcon from "../images/trash-bin.png"
 import update from "../images/update.png"
-import PostsForm from "./PostsForm"
 import swal from "sweetalert"
 
 const Posts = () => {
@@ -11,8 +10,6 @@ const Posts = () => {
 
 	let { id } = useParams()
 
-	let user = {}
-	
 	let navigate = useNavigate()
 	
 	const getPosts = async () => {
@@ -21,7 +18,7 @@ const Posts = () => {
 			)
 			setPosts(response.data)
 	}
-		
+	
 	useEffect(() => {
 		getPosts()
 	}, [])
@@ -63,11 +60,11 @@ const Posts = () => {
 			<p>{post.content}</p>
 		</div>
 	))
-
 	return (
 		<>
 			{posts && <div className="posts-container">{postsComponent}</div>}
         </>
 	)
 }
+
 export default Posts

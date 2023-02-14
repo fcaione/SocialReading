@@ -1,0 +1,26 @@
+.book-details-container {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    grid-template-columns: 2fr 5fr;
+}
+
+.details--sidebar {
+    border: solid 1px black;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    background-color: blue;
+}
+
+.details--photo {
+    width: 250px;
+}
+
+.details--data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.details--posts {
+    grid-column: 2 / 3;
+}

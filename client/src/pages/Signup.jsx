@@ -1,5 +1,6 @@
 import { useState } from "react"
 import axios from "axios"
+import { useNavigate } from "react-router-dom"
 
 const Home = () => {
 	const initialState = {
@@ -7,6 +8,8 @@ const Home = () => {
 		email: "",
 		password: "",
 	}
+
+	let navigate = useNavigate()
 
 	const [formState, setFormState] = useState(initialState)
 
@@ -48,6 +51,7 @@ const Home = () => {
         		onChange={handleChange}
         		/>
 				<button type="submit">Create User</button>
+				<button type="button" onClick={() => navigate("/")}>Sign In</button>
 			</form>
 		</div>
 	)

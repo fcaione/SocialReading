@@ -13,15 +13,26 @@ import PostsUpdateForm from './components/PostsUpdateForm';
 
 function App() {
 
-  const user = localStorage.getItem("userId")
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  useEffect(() => {
+    getLoggedIn()
+  }, [])
+
+  const getLoggedIn = () => {
+    if (localStorage.getItem("userId")) {
+      setIsLoggedIn(true)
+      console.log("logged in")
+    }
+  }
 
   return (
     <div className="App">
-      <NavBar />
+      {isLoggedIn && <NavBar />}
       <Routes>
-        <Route path="/" element = { user ? <Books /> : <Login />} />
+        <Route path="/" element = {<Login setIsLoggedIn = {setIsLoggedIn}/>} />
         <Route path="/signup" element = { <Signup />} />
-        <Route path="/books" element = { <Books /> } />
+        <Route path="/home" element = { isLoggedIn ? <Books /> : <Login setIsLoggedIn={setIsLoggedIn}/>} />
         <Route path="/books/add" element = { <BooksForm />} />
         <Route path="/books/:id" element = { <BookDetails />} />
         <Route path="/books/:id/new" element = { <PostsForm />} />
