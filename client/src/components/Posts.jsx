@@ -27,16 +27,17 @@ const Posts = () => {
 	}, [])
 	
 	const handleDelete = async (postId) => {
-		const response = swal({
+		const response = await swal({
 			title: "Are you sure you want to delete this post",
-			text: "ok",
+			type: "warning",
 			buttons: true,
-			dangerMode: true
+			dangerMode: true,
 		})
-		
-		response ? console.log("yes") : console.log("no")
-		// 	await axios.delete(`http://localhost:3001/api/post/${postId}`)
-		// }
+
+		if (response) {
+			await axios.delete(`http://localhost:3001/api/post/${postId}`)
+			getPosts()
+		}
 	}
 
 	const handleUpdate = async (postId) => {
