@@ -5,12 +5,8 @@ const Post = new Schema(
     {
         title: { type: String, required: true},
         content: { type: String, required: true},
-        book: { type: Schema.Types.ObjectId },
-        user: {type: Schema.Types.ObjectId, required: true},
-        fullReview: {type: Boolean},
-        chapter:  {type: Number},
-        page: {type: Number},
-        academicSource: {type: [Schema.Types.ObjectId]}
+        book: { type: Schema.Types.ObjectId, ref: Book },
+        user: {type: Schema.Types.ObjectId, ref: User, required: true},
     },
     { timestamps: true }
 )
