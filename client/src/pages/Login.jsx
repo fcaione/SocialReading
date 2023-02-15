@@ -46,7 +46,7 @@ const Login = (props) => {
 			</div>
 			<div className="form">
 				<h2>Login!</h2>
-				<form onSubmit={handleSubmit} >
+				<form onSubmit={handleSubmit}>
 					<label htmlFor="email">email</label>
 					<input
 						type="email"
@@ -64,7 +64,9 @@ const Login = (props) => {
 						onChange={handleChange}
 					/>
 					<button type="submit">Login</button>
-					<hr />
+					<div>
+						<hr />
+					</div>
 					<h2>Need to create an account?</h2>
 					<button type="button" onClick={() => navigate("/signup")}>
 						Sign up

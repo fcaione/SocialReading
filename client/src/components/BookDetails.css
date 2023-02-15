@@ -25,11 +25,15 @@
 }
 
 .details--data {
-    padding-left: 10px;
+    margin: auto 35px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     min-height: 350px;
+}
+
+.details--description {
+    margin-bottom: 25px;
 }
 
 .details--posts {
@@ -63,4 +67,18 @@
 
 .white-text {
     color: white;
+}
+
+.italics {
+    font-style: italic;
+    font-weight: 350;
+}
+
+.author {
+    margin-right: 250px;
+}
+
+hr {
+    width: 800px;
+    margin: 50px auto;
 }

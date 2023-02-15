@@ -38,10 +38,18 @@ const BookDetails = ({ user }) => {
 			</div>
 
 			<div className="details--data">
-				<h1>{selectedBook.title}</h1>
-				<h3>by: {selectedBook.author}</h3>
-				<h3>Publisher: {selectedBook.publisher}</h3>
-				<h3>Date Published: {selectedBook.datePublished}</h3>
+				<h1>
+					{selectedBook.title}
+					<br />
+					<span className="italics author">by: {selectedBook.author}</span>
+				</h1>
+				<p>Description:</p>
+				<div className="details--description">
+					<p>{selectedBook.description}</p>
+				</div>
+				<p>Published by <span className="italics">{selectedBook.publisher}</span></p>
+				<p>Published in {selectedBook.datePublished}</p>
+				<hr />
 			</div>
 
 			<div className="details--posts">
