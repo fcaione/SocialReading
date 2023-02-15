@@ -14,7 +14,7 @@ const Favorites = ({ user }) => {
 		})
 		console.log(response)
 		setFavorites(response.data.favorites)
-		// console.log(favorites)
+		console.log(favorites)
 	}
 
 	useEffect(() => {

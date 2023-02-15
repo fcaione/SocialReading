@@ -22,7 +22,8 @@ const AddFavorite = () => {
             }
           }) 
         const favorites = userObject.data.favorites
-        setIsFavorite(favorites.includes(id))
+        console.log(favorites)
+        setIsFavorite(favorites.some(favorite => favorite._id === id))
     }
 
     const makeFavorite = async () => {
