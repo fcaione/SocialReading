@@ -34,10 +34,13 @@
 
 .details--description {
     margin-bottom: 25px;
+    text-align: left;
 }
 
 .details--posts {
     grid-column: 2 / 3;
+    width: 100%;
+    height: 100%;
 }
 
 .details--btn {
@@ -79,6 +82,6 @@
 }
 
 hr {
-    width: 800px;
+    width: 70%;
     margin: 50px auto;
 }
