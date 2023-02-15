@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import axios from "axios"
+import "./PostingForms.css"
+
 
 const BooksForm = () => {
 
@@ -30,8 +32,8 @@ const BooksForm = () => {
     }
 
   return (
-    <div className="form-books">
-        <form onSubmit={handleSubmit} className="form-books">
+    <div className="form-container">
+        <form onSubmit={handleSubmit} className="form-post">
             <label htmlFor="title">title</label>
             <input 
             type="text" 

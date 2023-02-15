@@ -30,37 +30,37 @@ const Home = () => {
 			<div className="library-image">
 				<div className="blur"></div>
 			</div>
-			<div className="form">
+			<div className="log-form-container">
 				<h2>Sign up!</h2>
-				<form onSubmit={handleSubmit} >
-					<label htmlFor="user">Username</label>
-					<input
+				<form onSubmit={handleSubmit} className="log-form">
+					<label className="login-label" htmlFor="user">Username</label>
+					<input className="login-input"
 						type="text"
 						name="username"
 						id="name"
 						value={formState.name}
 						onChange={handleChange}
 					/>
-					<label htmlFor="email">Email</label>
-					<input
+					<label className="login-label" htmlFor="email">Email</label>
+					<input className="login-input"
 						type="email"
 						name="email"
 						id="email"
 						value={formState.email}
 						onChange={handleChange}
 					/>
-					<label htmlFor="password">Password</label>
-					<input
+					<label className="login-label" htmlFor="password">Password</label>
+					<input className="login-input"
 						type="password"
 						name="password"
 						id="password"
 						value={formState.password}
 						onChange={handleChange}
 					/>
-					<button type="submit">Create User</button>
-					<hr />
+					<button className="login-btn"type="submit">Create User</button>
+					<hr className="login-hr"/>
 					<h2>Already have an account?</h2>
-					<button type="button" onClick={() => navigate("/")}>
+					<button className="login-btn"type="button" onClick={() => navigate("/")}>
 						Sign In
 					</button>
 				</form>

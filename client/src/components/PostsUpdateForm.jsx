@@ -1,6 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom"
 import axios from "axios"
 import { useState, useEffect } from "react"
+import "./PostingForms.css"
+
 
 const PostsUpdateForm = () => {
     let { id } = useParams()
@@ -39,8 +41,8 @@ const PostsUpdateForm = () => {
     }
 
   return (
-    <div className="form-posts">
-        <form onSubmit={handleSubmit} >
+    <div className="form-container">
+        <form onSubmit={handleSubmit} className="form-post" >
             <label htmlFor="title">title</label>
             <input 
             type="title" 

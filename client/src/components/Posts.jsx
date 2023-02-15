@@ -47,7 +47,10 @@ const Posts = () => {
 			<div className="post-container" key={post._id}>
 				<div className="post--user">
 					<p className="username">
-						by: <span className="italic">{post.user ? post.user : "anonymous"}</span>
+						by:{" "}
+						<span className="italic">
+							{post.user ? post.user : "anonymous"}
+						</span>
 					</p>
 				</div>
 
