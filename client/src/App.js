@@ -10,9 +10,12 @@ import PostsForm from './components/PostsForm';
 import BooksForm from "./components/BooksForm"
 import Login from './pages/Login';
 import PostsUpdateForm from './components/PostsUpdateForm';
+import Favorites from './pages/Favorites';
 
 function App() {
 
+
+  const [user, setUser] = useState(localStorage.getItem("userId"))
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   useEffect(() => {
@@ -37,6 +40,7 @@ function App() {
         <Route path="/books/:id" element = { <BookDetails />} />
         <Route path="/books/:id/new" element = { <PostsForm />} />
         <Route path="/posts/:id/update" element = { <PostsUpdateForm />} />
+        <Route path="/favorites" element = { <Favorites user={user} />} />
       </Routes>
     </div>
   );
