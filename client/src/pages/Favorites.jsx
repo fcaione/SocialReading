@@ -20,18 +20,18 @@ const Favorites = ({ user }) => {
 		loadFavorites()
 	}, [])
 
+	const favoritesComponent = favorites ? (
+		<div className="books-container">
+			{favorites.map((favorite) => (
+				<BookCard key={favorite._id} {...favorite} />
+			))}
+		</div>
+	) : (
+		<h1>Go favorite some books!</h1>
+	)
 	return (
 		<>
-			{favorites.length > 0 && (
-				<div className="books-container">
-					{favorites.map((favorite) => (
-						<BookCard key={favorite._id} {...favorite} />
-					))}
-				</div>
-			)}
-			{favorites.length <= 0 && (
-				<h1>Go favorite some books!</h1>
-			)}
+			{favoritesComponent}
 		</>
 	)
 }

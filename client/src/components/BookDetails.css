@@ -82,7 +82,7 @@
     margin-right: 250px;
 }
 
-hr {
+.details-hr {
     width: 70%;
-    margin: 50px auto;
+    margin: 50px auto 5px auto;
 }

@@ -49,7 +49,7 @@ const BookDetails = ({ user }) => {
 				</div>
 				<p>Published by <span className="italics">{selectedBook.publisher}</span></p>
 				<p>Published in {selectedBook.datePublished}</p>
-				<hr />
+				<hr className="details-hr"/>
 			</div>
 
 			<div className="details--posts">

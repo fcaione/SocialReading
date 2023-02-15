@@ -88,7 +88,7 @@ const Posts = () => {
 					</div>
 				)}
 			</div>
-			<hr />
+			<hr className="posts-hr"/>
 		</>
 	))
 
