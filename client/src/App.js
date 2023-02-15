@@ -37,7 +37,7 @@ function App() {
         <Route path="/signup" element = { <Signup />} />
         <Route path="/home" element = { isLoggedIn ? <Books /> : <Login setIsLoggedIn={setIsLoggedIn}/>} />
         <Route path="/books/add" element = { <BooksForm />} />
-        <Route path="/books/:id" element = { <BookDetails />} />
+        <Route path="/books/:id" element = { <BookDetails user={user}/>} />
         <Route path="/books/:id/new" element = { <PostsForm />} />
         <Route path="/posts/:id/update" element = { <PostsUpdateForm />} />
         <Route path="/favorites" element = { <Favorites user={user} />} />

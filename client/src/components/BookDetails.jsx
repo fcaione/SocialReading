@@ -5,7 +5,7 @@ import Posts from "./Posts"
 import AddFavorite from "./AddFavorite"
 import "./BookDetails.css"
 
-const BookDetails = () => {
+const BookDetails = ({ user }) => {
 	let { id } = useParams()
 
 	const [selectedBook, setSelectedBook] = useState({})
@@ -24,20 +24,25 @@ const BookDetails = () => {
 	return (
 		<div className="book-details-container">
 			<div className="details--sidebar">
-				<img src={selectedBook.img} alt="" className="details--photo"/>
-				<div className="flex-row-evenly">
-					<AddFavorite />
-					<h3>rating:</h3>
+				<div className="details--opaque">
+					<img
+						src={selectedBook.img}
+						alt=""
+						className="details--photo"
+					/>
+					<div className="flex-row-evenly">
+						<h3>rating:</h3>
+						<AddFavorite user={user} />
+					</div>
 				</div>
-
 			</div>
+
 			<div className="details--data">
 				<h1>{selectedBook.title}</h1>
 				<h3>by: {selectedBook.author}</h3>
 				<h3>Publisher: {selectedBook.publisher}</h3>
 				<h3>Date Published: {selectedBook.datePublished}</h3>
 			</div>
-
 
 			<div className="details--posts">
 				<Posts />

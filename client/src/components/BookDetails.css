@@ -7,7 +7,16 @@
 .details--sidebar {
     grid-column: 1 / 2;
     grid-row: 1 / span 3;
-    padding: 15px;
+    padding: 10px;
+    background-image: url(../images/bookshelf2.jpg);
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+.details--opaque {
+    background-color: rgba(35,78,81,0.7);
+    padding: 10px;
+    margin-top: 25px;
 }
 
 .details--photo {
@@ -37,7 +46,7 @@
 }
 
 .favorite-img {
-    width: 30px;
+    width: 50px;
 }
 
 .favorite-btn {

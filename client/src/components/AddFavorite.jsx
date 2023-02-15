@@ -4,10 +4,9 @@ import { useParams } from "react-router-dom"
 import favorite from "../images/favorite.png"
 import notFavorite from "../images/notFavorite.png"
 
-const AddFavorite = () => {
+const AddFavorite = ({ user }) => {
 
     const [isFavorite, setIsFavorite] = useState(false)
-    const [user, setUser] = useState(localStorage.getItem("userId"))
 
     let { id } = useParams()
 
@@ -22,7 +21,6 @@ const AddFavorite = () => {
             }
           }) 
         const favorites = userObject.data.favorites
-        console.log(favorites)
         setIsFavorite(favorites.some(favorite => favorite._id === id))
     }
 
