@@ -23,3 +23,8 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.red-banner {
+  width: 100px;
+  margin-top: 0;
+}

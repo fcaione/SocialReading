@@ -44,7 +44,7 @@ const PostsUpdateForm = () => {
     <div className="form-container">
         <form onSubmit={handleSubmit} className="form-post" >
             <label htmlFor="title">title</label>
-            <input 
+            <input className="post-input"
             type="title" 
             name="title" 
             id="title" 
@@ -52,7 +52,7 @@ const PostsUpdateForm = () => {
             value={formState.title}
             />
             <label htmlFor="review">Review/Post</label>
-            <textarea 
+            <textarea className="post-textarea"
             name="review" 
             id="content" 
             cols="30" 
@@ -60,7 +60,7 @@ const PostsUpdateForm = () => {
             onChange={handleChange} 
             value={formState.content}
             ></textarea>
-            <button type="submit">Update Post</button>
+            <button className="post-btn"type="submit">Update Post</button>
         </form>
     </div>
   )

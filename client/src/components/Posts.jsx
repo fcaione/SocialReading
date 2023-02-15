@@ -3,6 +3,7 @@ import axios from "axios"
 import { useParams, useNavigate } from "react-router-dom"
 import trashIcon from "../images/trash-bin.png"
 import update from "../images/update.png"
+import banner from "../images/banner.png"
 import swal from "sweetalert"
 import "./Posts.css"
 
@@ -93,7 +94,10 @@ const Posts = () => {
 
 	return (
 		<>
-			<h2>Reviews!</h2>
+			<h2 className="no-btm-margin">Reviews!</h2>
+			<div>
+				<img className="red-banner"src={banner} alt="" />
+			</div>
 			{postsComponent}
 		</>
 	)

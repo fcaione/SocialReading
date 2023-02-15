@@ -34,16 +34,16 @@ const PostsForm = (props) => {
   return (
     <div className="form-container">
         <form onSubmit={handleSubmit} className="form-post">
-            <label htmlFor="title">title</label>
-            <input 
+            <label htmlFor="Post Title">Post Title</label>
+            <input className="post-input" 
             type="title" 
             name="title" 
             id="title" 
             onChange={handleChange} 
             value={formState.title}
             />
-            <label htmlFor="review">Review/Post</label>
-            <textarea 
+            <label htmlFor="content">Content</label>
+            <textarea className="post-textarea"
             name="review" 
             id="content" 
             cols="30" 
@@ -51,7 +51,7 @@ const PostsForm = (props) => {
             onChange={handleChange} 
             value={formState.content}
             ></textarea>
-            <button type="submit">Add post</button>
+            <button className="post-btn"type="submit">Add post</button>
         </form>
     </div>
   )
