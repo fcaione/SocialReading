@@ -76,6 +76,32 @@ const deletePost = async (req, res) => {
     }
 }
 
+const updateFavorites = async (req, res) => {
+    try {
+        console.log(req.body)
+        const user = await User.findByIdAndUpdate(req.body.user,
+        {$push: {favorites: req.body.id}},
+        { new: true })
+        res.status(201).send("favorited")
+    } catch (e) {
+        return res.status(500).json({ error: e.message})
+    }
+}
+
+const deleteFavorites = async (req, res) => {
+    try {
+        console.log(req.query)
+        console.log("delete")
+        const user = await User.findByIdAndUpdate(req.query.user,
+        {$pull: {favorites: req.query.id}},
+        { new: true })
+
+        res.status(201).send("unfavorited")
+    } catch (e) {
+        return res.status(500).json({ error: e.message})
+    }
+}
+
 const createUser = async (req, res) => {
     try {
         const user = await new User(req.body)
@@ -95,6 +121,15 @@ const certifyUser = async (req, res) => {
     }
 }
 
+const findUser = async (req, res) => {
+    try {
+        const user = await User.findById(req.query.product).populate("favorites")
+        return res.status(201).json(user)
+    } catch (e) {
+        return res.status(500).json({ error: e.message})
+    }
+}
+
 module.exports = {
     getAllBooks,
     getBook,
@@ -105,5 +140,8 @@ module.exports = {
     certifyUser,
     deletePost,
     getPost,
-    updatePost
+    updatePost,
+    updateFavorites,
+    findUser,
+    deleteFavorites
 }

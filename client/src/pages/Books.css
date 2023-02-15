@@ -1,0 +1,33 @@
+.books-container {
+	display: flex;
+	flex-wrap: wrap;
+	height: 100vh;
+	max-width: 200vh;
+}
+
+.book-card,
+.add-book {
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+	height: 325px;
+	margin: 20px;
+}
+
+.bookimg-container {
+    border: 1px solid black;
+    width: 200px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-img {
+    width: 200px;
+    height: 280px;
+}
+
+.add-img {
+	width: 200px;
+}

@@ -2,6 +2,7 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import BookCard from "../components/BookCard"
 import AddBook from "../components/AddBook"
+import "./Books.css"
 
 const Books = () => {
 

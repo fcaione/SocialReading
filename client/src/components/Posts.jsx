@@ -45,7 +45,7 @@ const Posts = () => {
 	const postsComponent = posts.map((post) => (
 			<div className="post-container" key={post._id}>
 				<div className="post--user">
-					<p>by: user</p>
+					<p>by: {post.user ? post.user : "anonymous"}</p>
 				</div>
 
 				<div className="post--content">

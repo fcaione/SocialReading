@@ -12,43 +12,11 @@ code {
     monospace;
 }
 
-.books-container {
-  display: flex;
-  height: 100vh;
-  width: 200vh;
-}
-
-.book-container, .add-book {
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-  height: 300px;
-  margin: 20px;
-  border: 1px solid black;
-}
-
-.bookimg-container {
- max-height: 80%;
-}
-
-.book-img {
-  width: 200px;
-  height: 300px;
-}
-
 .navbar {
   display: flex;
   justify-content: space-around;
   height: 65px;
   background-color: #B84A4A;
-}
-
-.add-book {
-  border: 1px solid #DCDCDC;
-}
-
-.add-img {
-  width: 200px;
 }
 
 .post {
@@ -61,8 +29,6 @@ code {
   justify-content: center;
   align-items: center;
 }
-
-
 
 a {
   text-decoration: none;

@@ -4,11 +4,11 @@ const NavBar = () => {
 	return (
 		<nav className="navbar">
 			<NavLink to="/home">
-				<h3>HOME</h3>
+				<h3>Home</h3>
 			</NavLink>
-			{/* <NavLink to="/books">
-				<h3>BOOKS</h3>
-			</NavLink> */}
+			<NavLink to="/mybooks">
+				<h3>My Books</h3>
+			</NavLink>
 		</nav>
 	)
 }

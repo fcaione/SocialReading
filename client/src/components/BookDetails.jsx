@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
 import Posts from "./Posts"
+import AddFavorite from "./AddFavorite"
 import "./BookDetails.css"
 
 const BookDetails = () => {
@@ -24,6 +25,11 @@ const BookDetails = () => {
 		<div className="book-details-container">
 			<div className="details--sidebar">
 				<img src={selectedBook.img} alt="" className="details--photo"/>
+				<div className="flex-row-evenly">
+					<AddFavorite />
+					<h3>rating:</h3>
+				</div>
+
 			</div>
 			<div className="details--data">
 				<h1>{selectedBook.title}</h1>

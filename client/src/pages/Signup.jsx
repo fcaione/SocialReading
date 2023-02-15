@@ -19,8 +19,9 @@ const Home = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-		await axios.get(`http://localhost:3001/api/users`, formState)
+		await axios.post(`http://localhost:3001/api/users`, formState)
 		setFormState(initialState)
+		navigate("/")
 	}
 
 	return (
