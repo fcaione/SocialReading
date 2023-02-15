@@ -31,7 +31,7 @@ const BookDetails = ({ user }) => {
 						className="details--photo"
 					/>
 					<div className="flex-row-evenly">
-						<h3>rating:</h3>
+						<h2 className="white-text">Rating:</h2>
 						<AddFavorite user={user} />
 					</div>
 				</div>

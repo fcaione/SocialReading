@@ -14,9 +14,10 @@
 }
 
 .details--opaque {
-    background-color: rgba(35,78,81,0.7);
+    background-color: rgba(255, 255, 255, .2); 
+    backdrop-filter: blur(1px);
     padding: 10px;
-    margin-top: 25px;
+    margin-top: 40px;
 }
 
 .details--photo {
@@ -58,4 +59,8 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.white-text {
+    color: white;
 }
