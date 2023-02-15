@@ -3,12 +3,11 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
 const Login = (props) => {
-
 	let navigate = useNavigate()
 
-  const initialState = {
+	const initialState = {
 		email: "",
-		password: ""
+		password: "",
 	}
 
 	const [formState, setFormState] = useState(initialState)
@@ -17,50 +16,62 @@ const Login = (props) => {
 		setFormState({ ...formState, [e.target.id]: e.target.value })
 	}
 
-  const login = (user) => {
-    console.log(user)
-    localStorage.setItem("userId", user._id)
-	props.setIsLoggedIn(true)
-	navigate("/home")
-  }
+	const login = (user) => {
+		console.log(user)
+		localStorage.setItem("userId", user._id)
+		props.setIsLoggedIn(true)
+		navigate("/home")
+	}
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-		const response = await axios.get(`http://localhost:3001/api/users/certify`, {
-      params: {
-        product: formState
-      }
-    })
-    const user = response.data
-    console.log(user)
-	setFormState(initialState)
-    if (user) login(user)
+		const response = await axios.get(
+			`http://localhost:3001/api/users/certify`,
+			{
+				params: {
+					product: formState,
+				},
+			}
+		)
+		const user = response.data
+		console.log(user)
+		setFormState(initialState)
+		if (user) login(user)
 	}
 
-  return (
-    <div>
-      <h3>Welcome Back</h3>
-      	<form onSubmit={handleSubmit} className="form-login">
-			<label htmlFor="email">email</label>
-			<input 
-        	type="email" 
-        	name="email" 
-        	id="email" 
-        	value={formState.email}
-        	onChange={handleChange}
-        	/>
-			<label htmlFor="password">password</label>
-			<input 
-        	type="password" 
-        	name="password" 
-        	id="password" 
-        	value={formState.password}
-        	onChange={handleChange}
-        	/>
-			<button type="submit">Login</button>
-			<button type="button" onClick={() => navigate("/signup")}>Sign up</button>
-		</form>
-    </div>
-  )
+	return (
+		<div className="grid">
+			<div className="library-image">
+				<div className="blur"></div>
+			</div>
+			<div className="form">
+				<h2>Login!</h2>
+				<form onSubmit={handleSubmit} >
+					<label htmlFor="email">email</label>
+					<input
+						type="email"
+						name="email"
+						id="email"
+						value={formState.email}
+						onChange={handleChange}
+					/>
+					<label htmlFor="password">password</label>
+					<input
+						type="password"
+						name="password"
+						id="password"
+						value={formState.password}
+						onChange={handleChange}
+					/>
+					<button type="submit">Login</button>
+					<hr />
+					<h2>Need to create an account?</h2>
+					<button type="button" onClick={() => navigate("/signup")}>
+						Sign up
+					</button>
+				</form>
+			</div>
+		</div>
+	)
 }
 export default Login
