@@ -12,8 +12,7 @@ const Favorites = ({ user }) => {
 				product: user,
 			},
 		})
-		console.log(response)
-		setFavorites(response.data.favorites)
+		if (response.data.favorites) setFavorites(response.data.favorites)
 		console.log(favorites)
 	}
 
@@ -22,11 +21,18 @@ const Favorites = ({ user }) => {
 	}, [])
 
 	return (
-		<div className="books-container">
-			{favorites.map((favorite) => (
-				<BookCard key={favorite._id} {...favorite} />
-			))}
-		</div>
+		<>
+			{favorites.length > 0 && (
+				<div className="books-container">
+					{favorites.map((favorite) => (
+						<BookCard key={favorite._id} {...favorite} />
+					))}
+				</div>
+			)}
+			{favorites.length <= 0 && (
+				<h1>Go favorite some books!</h1>
+			)}
+		</>
 	)
 }
 export default Favorites
