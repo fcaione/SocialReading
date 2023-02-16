@@ -1,6 +1,6 @@
 .navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 65px;
     background-color: #c3b3a4;
     border-bottom: 1px solid black;
@@ -8,4 +8,25 @@
     top: 0;
     width: 100%;
     z-index: 1;
+  }
+
+  .flex-row {
+    display: flex;
+
+  }
+
+  .favorites-page,
+  .about-page,
+  .sign-out {
+    margin-right: 60px;
+    padding-top: 5px;
+  }
+
+  .home-page {
+    margin-left: 40px;
+  }
+
+  .sign-out-btn {
+    all: unset;
+    cursor: pointer;
   }
