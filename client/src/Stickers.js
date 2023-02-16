@@ -11,7 +11,6 @@ const stickers = [
     sticker1,
     sticker2,
     sticker3,
-    sticker4,
     sticker5,
     sticker6,
     sticker7,
