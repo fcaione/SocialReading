@@ -20,7 +20,9 @@ function App() {
 
 	return (
 		<div className="App">
-			{user && <NavBar />}
+			{user && <NavBar 
+			setUser={setUser}
+			/>}
 			<Routes>
 				<Route
 					path="/"

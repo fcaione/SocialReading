@@ -2,8 +2,9 @@
     display: flex;
     justify-content: space-between;
     height: 65px;
-    background-color: #c3b3a4;
-    border-bottom: 1px solid black;
+    background-color: #ede3da;
+    border-bottom: 1px solid #9c8c84
+    ;
     position: fixed;
     top: 0;
     width: 100%;
@@ -12,14 +13,19 @@
 
   .flex-row {
     display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
+  .book-icon {
+    width: 30px;
+    margin-left: 15px;
   }
 
   .favorites-page,
   .about-page,
   .sign-out {
     margin-right: 60px;
-    padding-top: 5px;
   }
 
   .home-page {
