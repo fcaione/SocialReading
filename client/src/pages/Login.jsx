@@ -19,7 +19,6 @@ const Login = (props) => {
 	}
 
 	const login = (user) => {
-		console.log(user)
 		localStorage.setItem("userId", user._id)
 		props.setUser(user._id)
 		navigate("/")
@@ -37,7 +36,6 @@ const Login = (props) => {
 				}
 			)
 			const user = response.data
-			console.log(user)
 			setFormState(initialState)
 			if (user) login(user)
 		} catch (e) {

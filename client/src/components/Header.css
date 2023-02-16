@@ -1,17 +1,18 @@
-.header-container {
+.header-books-container {
 	margin-top: 120px;
-	width: 55%;
+	width: 50%;
 	height: 500px;
-    background-image: url("../images/readingAddicted.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(1.5px);
 }
 
-.header--blur{
-	background-color: rgba(255, 255, 255, 0.1);
-	backdrop-filter: blur(2px);
-    height: 500px;
-    width: 100%;
-    padding: 0;
-    margin: 0;
+
+.header--text {
+    color: white;
+    position: absolute;
+    top: 15%;
+    left: 27%;
+    box-shadow: 2px 2px 2px 1px;
 }

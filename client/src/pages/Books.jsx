@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import BookCard from "../components/BookCard"
 import AddBook from "../components/AddBook"
 import Header from "../components/Header"
+import image from "../images/readingAddicted.jpg"
 import "./Books.css"
 
 const Books = () => {
@@ -23,11 +24,11 @@ const Books = () => {
 
 	return (
 		<div className="flex-column">
-			<Header />
-			<div className="books-container">
-				{listOfBooks}
-				<AddBook />
-			</div>
+			<Header image={image} text={0}/>
+				<div className="books-container">
+					{listOfBooks}
+					<AddBook />
+				</div>
 		</div>
 	)
 }
