@@ -106,7 +106,8 @@ const createUser = async (req, res) => {
     try {
         const user = await new User(req.body)
         await user.save()
-        return res.status(201).json({user})
+
+        return res.status(201).json({message: "user created, please sign in"})
     } catch (e) {
         return res.status(500).json({ error: e.message})
     }
@@ -115,6 +116,8 @@ const createUser = async (req, res) => {
 const certifyUser = async (req, res) => {
     try {
         const user = await User.findOne({email: req.query.product.email, password: req.query.product.password})
+        if (!user) 
+            throw new Error("email or password is incorrect")
         return res.status(201).json(user)
     } catch (e) {
         return res.status(500).json({ error: e.message})

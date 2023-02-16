@@ -17,6 +17,8 @@ function App() {
 
   const [user, setUser] = useState(localStorage.getItem("userId"))
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+	const [successMessage, setSuccessMessage] = useState()
+
 
   useEffect(() => {
     getLoggedIn()
@@ -33,9 +35,11 @@ function App() {
     <div className="App">
       {isLoggedIn && <NavBar />}
       <Routes>
-        <Route path="/" element = {<Login setIsLoggedIn = {setIsLoggedIn}/>} />
-        <Route path="/signup" element = { <Signup />} />
-        <Route path="/home" element = { isLoggedIn ? <Books /> : <Login setIsLoggedIn={setIsLoggedIn}/>} />
+        <Route path="/" element = {<Login setIsLoggedIn = {setIsLoggedIn} successMessage={successMessage}/>} />
+        <Route path="/signup" element = { <Signup setSuccessMessage={setSuccessMessage}/>} />
+        <Route path="/home" element = { isLoggedIn ? <Books /> : <Login setIsLoggedIn={setIsLoggedIn}
+        successMessage={successMessage}
+        />} />
         <Route path="/books/add" element = { <BooksForm />} />
         <Route path="/books/:id" element = { <BookDetails user={user}/>} />
         <Route path="/books/:id/new" element = { <PostsForm />} />

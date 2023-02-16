@@ -5,13 +5,15 @@ import "./LoginSignup.css"
 
 const Login = (props) => {
 	let navigate = useNavigate()
-
+	console.log(props)
 	const initialState = {
 		email: "",
 		password: "",
 	}
 
 	const [formState, setFormState] = useState(initialState)
+	const [error, setError] = useState("")
+
 
 	const handleChange = (e) => {
 		setFormState({ ...formState, [e.target.id]: e.target.value })
@@ -26,18 +28,22 @@ const Login = (props) => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-		const response = await axios.get(
-			`http://localhost:3001/api/users/certify`,
-			{
-				params: {
-					product: formState,
-				},
-			}
-		)
-		const user = response.data
-		console.log(user)
-		setFormState(initialState)
-		if (user) login(user)
+		try {
+			const response = await axios.get(
+				`http://localhost:3001/api/users/certify`,
+				{
+					params: {
+						product: formState,
+					},
+				}
+			)
+			const user = response.data
+			console.log(user)
+			setFormState(initialState)
+			if (user) login(user)
+		} catch (e) {
+			setError(e.response.data.error)
+		}
 	}
 
 	return (
@@ -48,26 +54,46 @@ const Login = (props) => {
 			<div className="log-form-container">
 				<h2>Login!</h2>
 				<form onSubmit={handleSubmit} className="log-form">
-					<label className="login-label" htmlFor="email">Email</label>
-					<input className="login-input"
+					<label className="login-label" htmlFor="email">
+						Email
+					</label>
+					<input
+						className="login-input"
 						type="email"
 						name="email"
 						id="email"
 						value={formState.email}
 						onChange={handleChange}
 					/>
-					<label className="login-label" htmlFor="password">Password</label>
-					<input className="login-input"
+					<label className="login-label" htmlFor="password">
+						Password
+					</label>
+					<input
+						className="login-input"
 						type="password"
 						name="password"
 						id="password"
 						value={formState.password}
 						onChange={handleChange}
 					/>
-					<button className="login-btn" type="submit">Login</button>
-						<hr className="login-hr"/>
+
+					{error && 
+					<h5 className="error">{error}</h5>
+					}
+
+					{props.successMessage &&
+					<h5 className="success">{props.successMessage}</h5>
+					}
+					<button className="login-btn" type="submit">
+						Login
+					</button>
+					<hr className="login-hr" />
 					<h2>Need to create an account?</h2>
-					<button className="login-btn" type="button" onClick={() => navigate("/signup")}>
+					<button
+						className="login-btn"
+						type="button"
+						onClick={() => navigate("/signup")}
+					>
 						Sign up
 					</button>
 				</form>

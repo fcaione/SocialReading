@@ -3,7 +3,7 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import "./LoginSignup.css"
 
-const Home = () => {
+const Home = ({setSuccessMessage}) => {
 	const initialState = {
 		name: "",
 		email: "",
@@ -13,16 +13,22 @@ const Home = () => {
 	let navigate = useNavigate()
 
 	const [formState, setFormState] = useState(initialState)
+	const [error, setError] = useState("")
 
 	const handleChange = (e) => {
 		setFormState({ ...formState, [e.target.id]: e.target.value })
 	}
 
 	const handleSubmit = async (e) => {
-		e.preventDefault()
-		await axios.post(`http://localhost:3001/api/users`, formState)
-		setFormState(initialState)
-		navigate("/")
+		try {
+			e.preventDefault()
+			const response = await axios.post(`http://localhost:3001/api/users`, formState)
+			setFormState(initialState)
+			setSuccessMessage(response.data.message)
+			navigate("/")
+		} catch (e) {
+			setError(e.response.data.error)
+		}
 	}
 
 	return (
@@ -57,6 +63,10 @@ const Home = () => {
 						value={formState.password}
 						onChange={handleChange}
 					/>
+					
+					{error &&
+					<h5 className="error">{error}</h5>}
+
 					<button className="login-btn"type="submit">Create User</button>
 					<hr className="login-hr"/>
 					<h2>Already have an account?</h2>
