@@ -12,13 +12,6 @@ code {
     monospace;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-around;
-  height: 65px;
-  background-color: #B84A4A;
-}
-
 a {
   text-decoration: none;
   color: black;

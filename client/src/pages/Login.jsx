@@ -51,7 +51,7 @@ const Login = (props) => {
 				<div className="blur"></div>
 			</div>
 			<div className="log-form-container">
-				<h2>Login!</h2>
+				<h1>Login!</h1>
 				<form onSubmit={handleSubmit} className="log-form">
 					<label className="login-label" htmlFor="email">
 						Email
@@ -83,13 +83,13 @@ const Login = (props) => {
 					{props.successMessage &&
 					<h5 className="success">{props.successMessage}</h5>
 					}
-					<button className="login-btn" type="submit">
+					<button className="post-btn" type="submit">
 						Login
 					</button>
 					<hr className="login-hr" />
 					<h2>Need to create an account?</h2>
 					<button
-						className="login-btn"
+						className="post-btn"
 						type="button"
 						onClick={() => navigate("/signup")}
 					>

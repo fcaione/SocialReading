@@ -37,7 +37,7 @@ const Home = ({setSuccessMessage}) => {
 				<div className="blur"></div>
 			</div>
 			<div className="log-form-container">
-				<h2>Sign up!</h2>
+				<h1>Sign up!</h1>
 				<form onSubmit={handleSubmit} className="log-form">
 					<label className="login-label" htmlFor="user">Username</label>
 					<input className="login-input"
@@ -67,10 +67,10 @@ const Home = ({setSuccessMessage}) => {
 					{error &&
 					<h5 className="error">{error}</h5>}
 
-					<button className="login-btn"type="submit">Create User</button>
+					<button className="post-btn"type="submit">Create User</button>
 					<hr className="login-hr"/>
 					<h2>Already have an account?</h2>
-					<button className="login-btn"type="button" onClick={() => navigate("/")}>
+					<button className="post-btn"type="button" onClick={() => navigate("/")}>
 						Sign In
 					</button>
 				</form>
