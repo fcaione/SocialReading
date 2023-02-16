@@ -12,10 +12,7 @@
     display: flex;
     justify-content: right;
     margin-right: 20px;
-}
-
-.post--user {
-    width: 20%;
+    width: 0px;
 }
 
 .post--content {
@@ -23,8 +20,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-left: 20px;
-    width: 80%;
+    width: 85%;
 }
 
 .post--user {
@@ -33,15 +29,15 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    width: 20%;
+    width: 15%;
     font-size: 14px;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .button--icon {
     all: unset; 
+    margin-top: 15px;
     margin-right: 5px;
-    margin-top: 20px;
     cursor: pointer;
     justify-self: flex-end;
     align-self: flex-start;

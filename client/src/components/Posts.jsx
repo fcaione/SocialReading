@@ -20,7 +20,6 @@ const Posts = () => {
 			`http://localhost:3001/api/books/${id}/posts`
 		)
 		setPosts(response.data)
-		console.log(response)
 	}
 
 	const randomsticker = () => {

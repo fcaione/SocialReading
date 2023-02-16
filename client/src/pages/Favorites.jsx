@@ -19,7 +19,7 @@ const Favorites = ({ user }) => {
 		loadFavorites()
 	}, [])
 
-	const favoritesComponent = favorites ? (
+	const favoritesComponent = favorites.length ? (
 		<div className="books-container">
 			{favorites.map((favorite) => (
 				<BookCard key={favorite._id} {...favorite} />
