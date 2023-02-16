@@ -37,20 +37,6 @@ function App() {
 					}
 				/>
 				<Route
-					path="/home"
-					element={
-						user ? (
-							<Books />
-						) : (
-							<Login
-								user={user}
-								setUser={setUser}
-								successMessage={successMessage}
-							/>
-						)
-					}
-				/>
-				<Route
 					path="/signup"
 					element={<Signup setSuccessMessage={setSuccessMessage} />}
 				/>

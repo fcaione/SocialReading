@@ -21,7 +21,7 @@ const Login = (props) => {
 	const login = (user) => {
 		console.log(user)
 		localStorage.setItem("userId", user._id)
-		props.setIsLoggedIn(true)
+		props.setUser(user._id)
 		navigate("/")
 	}
 
