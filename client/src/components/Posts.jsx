@@ -5,6 +5,7 @@ import trashIcon from "../images/trash-bin.png"
 import update from "../images/update.png"
 import banner from "../images/banner.png"
 import swal from "sweetalert"
+import stickers from "../Stickers"
 import "./Posts.css"
 
 const Posts = () => {
@@ -19,6 +20,12 @@ const Posts = () => {
 			`http://localhost:3001/api/books/${id}/posts`
 		)
 		setPosts(response.data)
+		console.log(response)
+	}
+
+	const randomsticker = () => {
+		const randomNumber = Math.floor(Math.random() * stickers.length);
+		return stickers[randomNumber]
 	}
 
 	useEffect(() => {
@@ -47,10 +54,10 @@ const Posts = () => {
 		<>
 			<div className="post-container" key={post._id}>
 				<div className="post--user">
+						<img className="sticker" src={randomsticker()} alt="a random sticker" />
 					<p className="username">
-						by:{" "}
 						<span className="italic">
-							{post.user ? post.user : "anonymous"}
+							{post.user ? " " + post.user.name : " anonymous"}
 						</span>
 					</p>
 				</div>
@@ -60,7 +67,7 @@ const Posts = () => {
 					<p>{post.content}</p>
 				</div>
 
-				{localStorage.getItem("userId") === post.user && (
+				{localStorage.getItem("userId") === post.user._id && (
 					<div className="post--buttons">
 						<button
 							type="button"

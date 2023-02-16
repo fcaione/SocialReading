@@ -33,7 +33,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    max-width: 150px;
+    width: 20%;
     font-size: 14px;
     overflow: hidden;
 }
@@ -63,4 +63,10 @@ p {
 
 .no-btm-margin {
     margin-bottom: 0;
+}
+
+.sticker {
+    max-width: 80px;
+    border-radius: 50px;
+    border: 1px solid black
 }
