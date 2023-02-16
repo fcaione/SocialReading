@@ -15,7 +15,7 @@ const AddFavorite = ({ user }) => {
     },[isFavorite])
 
     const checkIfFavorite = async () => {
-        const userObject = await axios.get("http://localhost:3001/api/users",{
+        const userObject = await axios.get("/api/users",{
             params: {
               product: user
             }
@@ -25,12 +25,12 @@ const AddFavorite = ({ user }) => {
     }
 
     const makeFavorite = async () => {
-        await axios.put(`http://localhost:3001/api/users`, {user, id})
+        await axios.put(`/api/users`, {user, id})
         setIsFavorite(true)
     }
 
     const unFavorite = async () => {
-        await axios.delete(`http://localhost:3001/api/users`,{
+        await axios.delete(`/api/users`,{
             params: {
               user: user,
               id: id

@@ -29,7 +29,7 @@ const Login = (props) => {
 		e.preventDefault()
 		try {
 			const response = await axios.get(
-				`http://localhost:3001/api/users/certify`,
+				`/api/users/certify`,
 				{
 					params: {
 						product: formState,

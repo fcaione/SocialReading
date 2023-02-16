@@ -22,7 +22,7 @@ const Home = ({setSuccessMessage}) => {
 	const handleSubmit = async (e) => {
 		try {
 			e.preventDefault()
-			const response = await axios.post(`http://localhost:3001/api/users`, formState)
+			const response = await axios.post(`/api/users`, formState)
 			setFormState(initialState)
 			setSuccessMessage(response.data.message)
 			navigate("/")

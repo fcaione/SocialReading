@@ -9,7 +9,7 @@ const Books = () => {
 	const [books, setBooks] = useState([])
 
 	const getBooks = async () => {
-		const response = await axios.get("http://localhost:3001/api/books/")
+		const response = await axios.get("/api/books/")
 		setBooks(response.data)
 	}
 

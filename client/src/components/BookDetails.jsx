@@ -12,7 +12,7 @@ const BookDetails = ({ user }) => {
 
 	const getBook = async () => {
 		const response = await axios.get(
-			`http://localhost:3001/api/books/${id}`
+			`/api/books/${id}`
 		)
 		setSelectedBook(response.data)
 	}

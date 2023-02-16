@@ -17,7 +17,7 @@ const Posts = () => {
 
 	const getPosts = async () => {
 		const response = await axios.get(
-			`http://localhost:3001/api/books/${id}/posts`
+			`/api/books/${id}/posts`
 		)
 		setPosts(response.data)
 	}
@@ -40,7 +40,7 @@ const Posts = () => {
 		})
 
 		if (response) {
-			await axios.delete(`http://localhost:3001/api/post/${postId}`)
+			await axios.delete(`/api/post/${postId}`)
 			getPosts()
 		}
 	}

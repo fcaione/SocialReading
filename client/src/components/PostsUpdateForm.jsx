@@ -13,7 +13,7 @@ const PostsUpdateForm = () => {
     const [formState, setFormState] = useState({})
 
     const getPost = async () => {
-        const response = await axios.get(`http://localhost:3001/api/post/${id}`)
+        const response = await axios.get(`/api/post/${id}`)
         setPost(response.data)
     }
 

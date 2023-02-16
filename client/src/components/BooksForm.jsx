@@ -23,7 +23,7 @@ const BooksForm = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-		await axios.post(`http://localhost:3001/api/books/add`, formState)
+		await axios.post(`/api/books/add`, formState)
 		setFormState(initialState)
 		navigate(`/home`)
 	}
