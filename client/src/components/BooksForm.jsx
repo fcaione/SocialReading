@@ -25,7 +25,7 @@ const BooksForm = () => {
 		e.preventDefault()
 		await axios.post(`http://localhost:3001/api/books/add`, formState)
 		setFormState(initialState)
-		navigate(`/books`)
+		navigate(`/home`)
 	}
 
 	return (
@@ -58,7 +58,7 @@ const BooksForm = () => {
                     cols="30" 
                     rows="10" 
 					onChange={handleChange}
-					value={formState.author}
+					value={formState.description}
 				/>
 				<label htmlFor="img">Image Address</label>
 				<input
