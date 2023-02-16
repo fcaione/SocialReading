@@ -13,7 +13,6 @@ const Favorites = ({ user }) => {
 			},
 		})
 		if (response.data.favorites) setFavorites(response.data.favorites)
-		console.log(favorites)
 	}
 
 	useEffect(() => {

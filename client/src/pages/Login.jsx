@@ -5,7 +5,6 @@ import "./LoginSignup.css"
 
 const Login = (props) => {
 	let navigate = useNavigate()
-	console.log(props)
 	const initialState = {
 		email: "",
 		password: "",
@@ -23,7 +22,7 @@ const Login = (props) => {
 		console.log(user)
 		localStorage.setItem("userId", user._id)
 		props.setIsLoggedIn(true)
-		navigate("/home")
+		navigate("/")
 	}
 
 	const handleSubmit = async (e) => {
