@@ -2,7 +2,7 @@ import BookCard from "../components/BookCard"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import Header from "../components/Header"
-import image from "../images/readingAddicted.jpg"
+import image from "../images/favoriteBooks.jpg"
 import "./Books.css"
 
 const Favorites = ({ user }) => {
