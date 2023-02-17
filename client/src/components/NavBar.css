@@ -31,6 +31,18 @@
 	margin-left: 40px;
 }
 
+@media screen and (max-width: 693px) {
+	.home-page {
+		font-size: 12px;
+		margin-left: 0;
+	}
+	.favorites-page,
+	.about-page,
+	.sign-out {
+		margin-right: 30px;
+	}
+}
+
 .sign-out-btn {
 	all: unset;
 	cursor: pointer;
