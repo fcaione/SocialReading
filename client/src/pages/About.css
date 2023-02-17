@@ -1,0 +1,13 @@
+.about {
+    height: 100vh;
+    margin-top: 65px;
+    padding-top: 35px;
+    background-color: #E8D9CF;
+}
+
+.about--p {
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-left: 25px;
+}

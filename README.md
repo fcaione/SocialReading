@@ -49,3 +49,9 @@
 ## ***Credits / Links***
 
 ### [Trello](https://trello.com/b/CUklKl92/project-2)
+### Book descriptions + images: [Goodreads](https://www.goodreads.com/) | [Abebooks](https://www.abebooks.com/)
+### [Scroll to the top component](https://v5.reactrouter.com/web/guides/scroll-restoration)
+### About Page: ChatGBT generated
+
+
+

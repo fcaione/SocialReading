@@ -12,6 +12,7 @@ import Login from "./pages/Login"
 import PostsUpdateForm from "./components/PostsUpdateForm"
 import Favorites from "./pages/Favorites"
 import ScrollToTop from "./components/ScrollToTop"
+import About from "./pages/About"
 
 function App() {
 	const [user, setUser] = useState(localStorage.getItem("userId"))
@@ -57,6 +58,10 @@ function App() {
 					<Route
 						path="/favorites"
 						element={<Favorites user={user} />}
+					/>
+					<Route
+						path="/about"
+						element={<About />}
 					/>
 				</Routes>
 			</ScrollToTop>
