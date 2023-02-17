@@ -25,7 +25,7 @@ const BooksForm = () => {
 		e.preventDefault()
 		await axios.post(`/api/books/add`, formState)
 		setFormState(initialState)
-		navigate(`/home`)
+		navigate(`/`)
 	}
 
 	return (
