@@ -36,7 +36,7 @@ const PostsUpdateForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await axios.put(`http://localhost:3001/api/post/${id}`, formState)
+        await axios.put(`/api/post/${id}`, formState)
         navigate(`/books/${post.book}`)
     }
 
