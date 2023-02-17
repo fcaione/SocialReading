@@ -1,12 +1,19 @@
-# Social Reading App
-# Date: 2/09/2023
+# Literary Lounge
+## 2/09/2023
 ## By: Freddy Caione
 ### [Linkedin](https://www.linkedin.com/in/frederick-caione-b699821b9/) | [Github](https://github.com/fcaione)
 
 ***
 
 ## ***Description***
-### In an attempt to innovate book review websites and further connect the users, this project lets readers connect, track their reading progress, and annotate/post/analyze based on their progress in the book. These posts will be available to other users depending on their own progress so users can have conversations with people at similar progress points, emulating a digital book club. For those who need to decompress after that stressful chapter.
+### Literary Lounge attempts to emulate a classic book review website. Sign in, add books, add reviews, favorite books, and even edit or remove your own posts, Literary Lounge has the necessary foundation of a classic review site, with incoming features in the future to further innovate and set it apart from the competition
+
+***
+
+## ***Screenshots***
+<img src="./client/src/images/loginPage.png" alt="pic" width="1000">
+<img src="./client/src/images/bookDetailsPage.png" alt="pic" width="1000">
+<img src="./client/src/images/homePage.png" alt="pic" width="1000">
 
 ***
 
@@ -18,30 +25,27 @@
 * Node.js
 * CSS
 * JavaScript
+* Flaticon
 
 ***
 
 ## ***Getting Started***
+### Create an account, sign in, and look for a book you'd like to make a review about. Don't see one, feel free to add a new book, and be the first to write a review for your favorite book (or your least favorite book, everyone loves a classic pan).
 ### 
-### 
 
 ***
 
-## Try it out: [Deployed link]()
+## Try it out: [Deployed link](https://literarylounge.herokuapp.com/)
 
 ***
 
-## ***Screenshots***
-
-
-
-***
 ## ***Future Updates***
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ] guest login feature
+- [ ] rating component
+- [ ] search bar
 
 ***
 
 ## ***Credits / Links***
+
 ### [Trello](https://trello.com/b/CUklKl92/project-2)
