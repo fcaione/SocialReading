@@ -43,6 +43,23 @@ const Login = (props) => {
 		}
 	}
 
+	const guestLogin = async (e) => {
+		const response = await axios.get(
+			`/api/users/certify`,
+			{
+				params: {
+					product: {
+						email: "guest@gmail.com",
+						password: "guest"
+					},
+				},
+			}
+		)
+		const user = response.data
+		setFormState(initialState)
+		if (user) login(user)
+	}
+
 	return (
 		<div className="grid">
 			<div className="library-image">
@@ -85,13 +102,20 @@ const Login = (props) => {
 						Login
 					</button>
 					<hr className="login-hr" />
-					<h2>Need to create an account?</h2>
+					<h2>Don't have an account?</h2>
 					<button
 						className="post-btn"
 						type="button"
 						onClick={() => navigate("/signup")}
 					>
 						Sign up
+					</button>
+					<button
+						className="post-btn"
+						type="button"
+						onClick={() => guestLogin()}
+					>
+						Guest login
 					</button>
 				</form>
 			</div>
