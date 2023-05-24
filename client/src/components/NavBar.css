@@ -34,16 +34,23 @@
 @media screen and (max-width: 693px) {
 	.home-page {
 		font-size: 12px;
-		margin-left: 0;
+		margin-left: 6px;
+		margin-top: 7px;
 	}
 	.favorites-page,
 	.about-page,
 	.sign-out {
 		margin-right: 30px;
 	}
+
 }
 
 .sign-out-btn {
 	all: unset;
 	cursor: pointer;
+}
+
+.items-center {
+	align-items: center;
+	justify-content: center;
 }

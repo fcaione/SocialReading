@@ -27,9 +27,9 @@ const NavBar = ({ setUser }) => {
 	return (
 		<nav className="navbar">
 			<NavLink to="/">
-				<div className="flex-row">
+				<div className="flex-row items-center">
 					<div className="home-page">
-						<h2>LITERARY LOUNGE</h2>
+						<h2>Literary Lounge</h2>
 					</div>
 
 					<div>
